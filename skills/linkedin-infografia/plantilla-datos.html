@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infografía de LinkedIn</title>
+<!-- Cambia la fuente por la de la marca (perfil, sección 8). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<style>
+  /* Marca: cambia estos valores por los del perfil (sección 8). */
+  :root {
+    --fondo: #0f0f10;
+    --texto: #f5f5f4;
+    --suave: #a8a29e;
+    --linea: #2a2a2d;
+    --acento: #f97316;
+    --fuente: "Inter", system-ui, sans-serif;
+    --firma: "Nombre Apellido · @usuario";
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #d6d3d1; font-family: var(--fuente); }
+
+  /* Cada imagen: 1080 × 1350 (4:5, vertical). Se deja solo el bloque que se use. */
+  .img {
+    width: 1080px; height: 1350px; padding: 110px 100px 150px;
+    background: var(--fondo); color: var(--texto);
+    display: flex; flex-direction: column; gap: 56px;
+    position: relative; overflow: hidden;
+    margin: 40px auto; box-shadow: 0 10px 40px rgba(0,0,0,.25);
+  }
+  .img::after { content: var(--firma); position: absolute; left: 100px; bottom: 70px; font-size: 28px; color: var(--suave); }
+  .fuente { position: absolute; right: 100px; bottom: 70px; font-size: 24px; color: var(--suave); max-width: 520px; text-align: right; }
+
+  .etiqueta { font-size: 30px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--acento); }
+  h1 { font-size: 84px; line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; }
+  p  { font-size: 42px; line-height: 1.35; }
+  .suave { color: var(--suave); }
+
+  /* Pasos */
+  .pasos { list-style: none; padding: 0; display: grid; gap: 40px; margin-top: 20px; }
+  .pasos li { display: grid; grid-template-columns: 100px 1fr; align-items: center; font-size: 46px; line-height: 1.25; }
+  .pasos b { width: 76px; height: 76px; border-radius: 50%; background: var(--acento); color: var(--fondo); display: grid; place-items: center; font-size: 40px; }
+
+  /* Comparación */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1; }
+  .col { border: 3px solid var(--linea); border-radius: 28px; padding: 48px 40px; display: grid; align-content: start; gap: 28px; }
+  .col.bien { border-color: var(--acento); }
+  .col h2 { font-size: 46px; }
+  .col p { font-size: 36px; }
+
+  /* Dato grande */
+  .dato { font-size: 240px; font-weight: 800; line-height: 1; color: var(--acento); letter-spacing: -0.03em; margin-top: 80px; }
+
+  /* Gráfico de barras: --v es el porcentaje del valor más alto (0-100). */
+  .barras { display: grid; gap: 44px; margin-top: 20px; }
+  .barra { display: grid; gap: 14px; }
+  .barra .nombre { font-size: 36px; display: flex; justify-content: space-between; }
+  .barra .nombre b { font-weight: 800; }
+  .barra .pista { height: 56px; background: var(--linea); border-radius: 12px; overflow: hidden; }
+  .barra .valor { height: 100%; width: calc(var(--v) * 1%); background: var(--suave); border-radius: 12px; }
+  .barra.destacada .valor { background: var(--acento); }
+
+  /* Gráfico de evolución (SVG): cambia los puntos de la polilínea. */
+  .linea svg { width: 100%; height: 640px; overflow: visible; }
+
+  /* Vista en pantalla reducida; al exportar, tamaño real. */
+  @media screen { .img { zoom: .45; } }
+  @page { size: 1080px 1350px; margin: 0; }
+  @media print { body { background: none; } .img { margin: 0; box-shadow: none; zoom: 1; break-after: page; } }
+</style>
+</head>
+<body>
+
+<!-- PASOS -->
+<section class="img">
+  <span class="etiqueta">Método</span>
+  <h1>Titular con la conclusión, no con el tema</h1>
+  <ol class="pasos">
+    <li><b>1</b><span>Primer paso en una línea</span></li>
+    <li><b>2</b><span>Segundo paso</span></li>
+    <li><b>3</b><span>Tercer paso</span></li>
+    <li><b>4</b><span>Cuarto paso</span></li>
+  </ol>
+</section>
+
+<!-- COMPARACIÓN -->
+<section class="img">
+  <span class="etiqueta">Antes / después</span>
+  <h1>Lo que cambió</h1>
+  <div class="cols">
+    <div class="col"><h2 class="suave">Antes</h2><p>Una línea</p><p>Otra línea</p></div>
+    <div class="col bien"><h2>Ahora</h2><p>Una línea</p><p>Otra línea</p></div>
+  </div>
+</section>
+
+<!-- DATO GRANDE -->
+<section class="img">
+  <span class="etiqueta">El dato</span>
+  <div class="dato">1.451</div>
+  <p>impresiones por post tienen los carruseles en LinkedIn, frente a 605 del vídeo.</p>
+  <span class="fuente">Fuente: estudio de LinkedIn 2026 de Metricool (673.658 publicaciones)</span>
+</section>
+
+<!-- GRÁFICO DE BARRAS: --v = valor / valor máximo × 100 -->
+<section class="img">
+  <span class="etiqueta">Impresiones por post</span>
+  <h1>El carrusel tiene más del doble de impresiones que el vídeo</h1>
+  <div class="barras">
+    <div class="barra destacada" style="--v:100"><span class="nombre">Carrusel <b>1.451</b></span><div class="pista"><div class="valor"></div></div></div>
+    <div class="barra" style="--v:41.7"><span class="nombre">Vídeo <b>605</b></span><div class="pista"><div class="valor"></div></div></div>
+  </div>
+  <span class="fuente">Fuente: estudio de LinkedIn 2026 de Metricool (673.658 publicaciones)</span>
+</section>
+
+<!-- GRÁFICO DE EVOLUCIÓN: ejemplo con valores de relleno; se sustituyen por los reales -->
+<section class="img linea">
+  <span class="etiqueta">Evolución</span>
+  <h1>Titular con la conclusión del cambio</h1>
+  <svg viewBox="0 0 880 640" aria-label="Gráfico de evolución">
+    <line x1="0" y1="600" x2="880" y2="600" stroke="var(--linea)" stroke-width="3"/>
+    <polyline fill="none" stroke="var(--acento)" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"
+      points="0,520 176,470 352,480 528,330 704,260 880,120"/>
+    <circle cx="880" cy="120" r="16" fill="var(--acento)"/>
+    <text x="0" y="636" font-size="28" fill="var(--suave)">Ene</text>
+    <text x="840" y="636" font-size="28" fill="var(--suave)">Jun</text>
+  </svg>
+  <span class="fuente">Fuente: tu cuenta (Metricool)</span>
+</section>
+
+</body>
+</html>

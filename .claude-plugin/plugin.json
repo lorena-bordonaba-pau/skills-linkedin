@@ -1,0 +1,10 @@
+{
+  "name": "equipo-linkedin",
+  "description": "Tu equipo de LinkedIn en español: kickoff, redactora con tu voz, estratega con el estudio de LinkedIn 2026 de Metricool, analista y community manager conectadas a Metricool, infografías y gráficos, y una reunión semanal que lo une todo.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Lorena Bordonaba"
+  },
+  "license": "MIT",
+  "keywords": ["linkedin", "marketing", "español", "metricool", "claude-skills", "contenido"]
+}

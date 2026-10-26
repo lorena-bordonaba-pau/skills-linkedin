@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infografía · estilo boceto</title>
+<!-- Estilo 1 · boceto a mano: para explicar conceptos (procesos, ciclos, viajes, embudos, escaleras, antes/después). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&display=swap">
+<style>
+  :root {
+    --papel: #fdfdfb;
+    --tinta: #1a1a1a;
+    --firma: "Nombre Apellido · @usuario";
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #d6d3d1; }
+  .img { width: 1080px; height: 1350px; margin: 40px auto; background: var(--papel); position: relative; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+  .img svg { width: 100%; height: 100%; display: block; }
+  .img::after { content: var(--firma); position: absolute; left: 0; right: 0; bottom: 30px; text-align: center; font: 28px "Patrick Hand", cursive; color: #6b6b6b; }
+
+  /* Trazo de rotulador */
+  .t { fill: none; stroke: var(--tinta); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+  .t.fino { stroke-width: 3.5; }
+  .t.punteado { stroke-width: 3.5; stroke-dasharray: 2 12; }
+  .papel { fill: var(--papel); }
+  .relleno { fill: var(--tinta); stroke: none; }
+  .titulo { font: 88px "Gochi Hand", cursive; fill: var(--tinta); }
+  .nombre { font: 50px "Gochi Hand", cursive; fill: var(--tinta); }
+  .nota { font: 34px "Patrick Hand", cursive; fill: #3a3a3a; }
+  .mini { font: 28px "Patrick Hand", cursive; fill: #3a3a3a; }
+  .pantalla { font: 46px "Gochi Hand", cursive; fill: var(--tinta); }
+
+  @media screen { .img { zoom: .45; } }
+  @page { size: 1080px 1350px; margin: 0; }
+  @media print { body { background: none; } .img { margin: 0; box-shadow: none; zoom: 1; } }
+</style>
+</head>
+<body>
+
+<!-- EJEMPLO: un ciclo de 4 puestos con entradas y una herramienta en el centro.
+     Piezas reutilizables en <defs>: monigote, bombilla, hoja, lápiz, pila de documentos,
+     gráfico, lupa, calendario, reloj, nube de pensamiento, portátil, llave y flecha.
+     Para otros conceptos (un viaje, un embudo, una escalera) se recolocan las piezas. -->
+<section class="img">
+<svg viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Hace que las líneas tiemblen un poco, como dibujadas a mano. -->
+    <filter id="trazo" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="3.5"/>
+    </filter>
+    <marker id="punta" viewBox="0 0 20 20" refX="16" refY="10" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M2,2 L17,10 L2,18" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+
+    <!-- Monigote: el origen es el centro de la cabeza. Mide ~200 de alto. -->
+    <g id="monigote">
+      <circle class="t" cx="0" cy="0" r="30"/>
+      <circle class="relleno" cx="-10" cy="-6" r="3.5"/><circle class="relleno" cx="10" cy="-6" r="3.5"/>
+      <path class="t fino" d="M-13,7 Q0,19 13,7"/>
+      <path class="t" d="M0,30 L1,120"/>
+      <path class="t" d="M-50,48 L0,64 L50,46"/>
+      <path class="t" d="M-36,198 L1,120 L38,198"/>
+    </g>
+    <g id="bombilla">
+      <path class="t" d="M-26,8 C-48,-24 -28,-62 0,-62 C28,-62 48,-24 26,8 L22,24 L-22,24 Z"/>
+      <path class="t fino" d="M-18,36 L18,36 M-14,48 L14,48"/>
+      <path class="t fino" d="M0,-80 L0,-98 M-48,-58 L-62,-70 M48,-58 L62,-70 M-62,-20 L-82,-20 M62,-20 L82,-20"/>
+    </g>
+    <g id="hoja">
+      <path class="t" d="M0,0 L96,-6 L102,118 L4,122 Z"/>
+      <path class="t fino" d="M18,24 L82,22 M18,48 L84,46 M18,72 L80,71 M18,96 L60,95"/>
+    </g>
+    <g id="lapiz">
+      <path class="t" d="M0,0 L70,-70 L86,-54 L16,16 Z"/>
+      <path class="t fino" d="M0,0 L-10,26 L16,16"/>
+      <path class="t fino" d="M60,-60 L76,-44"/>
+    </g>
+    <g id="pila">
+      <path class="t papel" d="M16,-16 L126,-18 L128,110 L18,112 Z"/>
+      <path class="t papel" d="M8,-8 L118,-10 L120,118 L10,120 Z"/>
+      <path class="t papel" d="M0,0 L110,-2 L112,126 L2,128 Z"/>
+    </g>
+    <g id="grafico">
+      <path class="t" d="M0,0 L0,120 L130,120"/>
+      <path class="t" d="M22,120 L22,78 L44,78 L44,120 M60,120 L60,46 L82,46 L82,120 M98,120 L98,12 L120,12 L120,120"/>
+    </g>
+    <g id="lupa">
+      <circle class="t" cx="0" cy="0" r="28"/>
+      <path class="t" d="M20,20 L52,52"/>
+    </g>
+    <g id="calendario">
+      <path class="t" d="M0,0 L118,-3 L120,112 L2,114 Z"/>
+      <path class="t" d="M1,28 L119,26"/>
+      <path class="t fino" d="M28,-14 L28,10 M90,-15 L90,9"/>
+      <path class="t" d="M34,70 L54,90 L90,46"/>
+    </g>
+    <g id="reloj">
+      <circle class="t" cx="0" cy="0" r="30"/>
+      <path class="t fino" d="M0,0 L0,-18 M0,0 L14,8"/>
+    </g>
+    <g id="nube">
+      <path class="t" d="M-70,10 C-96,6 -92,-30 -64,-30 C-60,-56 -24,-60 -10,-42 C6,-62 46,-58 50,-32 C80,-34 92,0 66,12 C70,36 36,46 20,30 C6,48 -30,48 -40,30 C-62,40 -84,28 -70,10 Z"/>
+    </g>
+    <g id="llave">
+      <circle class="t" cx="0" cy="0" r="20"/>
+      <path class="t" d="M20,0 L86,0 M66,0 L66,18 M80,0 L80,14"/>
+    </g>
+  </defs>
+
+  <g filter="url(#trazo)">
+    <!-- Título -->
+    <text class="titulo" x="540" y="118" text-anchor="middle">Tu equipo de LinkedIn</text>
+    <path class="t" d="M150,148 C380,140 700,156 930,144"/>
+    <text class="nota" x="540" y="196" text-anchor="middle">(y nadie en nómina)</text>
+
+    <!-- 1 · Redactora (arriba izquierda) -->
+    <use href="#nube" x="118" y="232"/>
+    <text class="mini" x="118" y="240" text-anchor="middle">tu voz</text>
+    <circle class="t fino" cx="166" cy="286" r="7"/><circle class="t fino" cx="180" cy="302" r="4"/>
+    <use href="#monigote" x="210" y="340"/>
+    <use href="#hoja" x="285" y="292"/>
+    <use href="#lapiz" x="372" y="450"/>
+    <text class="nombre" x="270" y="610" text-anchor="middle">Redactora</text>
+    <text class="nota" x="270" y="652" text-anchor="middle">escribe como tú</text>
+
+    <!-- 2 · Estratega (arriba derecha) -->
+    <use href="#bombilla" transform="translate(772,262) scale(.8)"/>
+    <use href="#monigote" x="770" y="340"/>
+    <use href="#pila" x="840" y="300"/>
+    <text class="mini" x="897" y="356" text-anchor="middle">673.658</text>
+    <text class="mini" x="897" y="390" text-anchor="middle">posts</text>
+    <text class="nombre" x="810" y="610" text-anchor="middle">Estratega</text>
+    <text class="nota" x="810" y="652" text-anchor="middle">sabe qué funciona</text>
+
+    <!-- 3 · Analista (abajo derecha) -->
+    <use href="#monigote" x="750" y="960"/>
+    <use href="#grafico" x="820" y="930"/>
+    <use href="#lupa" x="946" y="886"/>
+    <text class="nombre" x="810" y="1222" text-anchor="middle">Analista</text>
+    <text class="nota" x="810" y="1264" text-anchor="middle">mira tus datos</text>
+
+    <!-- 4 · Community manager (abajo izquierda) -->
+    <use href="#monigote" x="200" y="960"/>
+    <use href="#calendario" x="280" y="945"/>
+    <use href="#reloj" x="128" y="872"/>
+    <text class="mini" x="128" y="828" text-anchor="middle">9:00</text>
+    <text class="nombre" x="270" y="1222" text-anchor="middle">Community manager</text>
+    <text class="nota" x="270" y="1264" text-anchor="middle">lo programa</text>
+
+    <!-- Centro: Claude y la llave de Metricool -->
+    <path class="t" d="M430,712 L652,708 L656,848 L432,852 Z"/>
+    <path class="t" d="M402,852 L686,848 L712,882 L378,886 Z"/>
+    <text class="pantalla" x="543" y="772" text-anchor="middle">Claude</text>
+    <text class="mini" x="543" y="816" text-anchor="middle">reunión de los lunes</text>
+    <path class="t punteado" d="M545,886 L545,940"/>
+    <use href="#llave" x="505" y="962"/>
+    <text class="mini" x="545" y="1018" text-anchor="middle">Metricool = la llave</text>
+
+    <!-- Flechas del ciclo, con lo que pasa de un puesto a otro -->
+    <path class="t" d="M670,524 C600,510 520,510 470,524" marker-end="url(#punta)"/>
+    <text class="mini" x="568" y="496" text-anchor="middle">el plan</text>
+    <path class="t" d="M52,660 C40,720 42,760 54,800" marker-end="url(#punta)"/>
+    <text class="mini" x="72" y="740">el post</text>
+    <path class="t" d="M440,1110 C520,1126 600,1126 680,1110" marker-end="url(#punta)"/>
+    <text class="mini" x="560" y="1158" text-anchor="middle">publicado</text>
+    <path class="t" d="M1036,860 C1048,790 1046,730 1034,660" marker-end="url(#punta)"/>
+    <text class="mini" x="1012" y="760" text-anchor="end">tus datos</text>
+  </g>
+</svg>
+</section>
+
+</body>
+</html>

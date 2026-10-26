@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infografía · estilo listado</title>
+<!-- Estilo 2 · listado tipo Notion: para listas de recursos, herramientas, plantillas, pasos con categoría. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --papel: #ffffff;
+    --tinta: #37352f;
+    --suave: #787774;
+    --linea: #e9e9e7;
+    --subrayado: rgba(55, 53, 47, .16);
+    --firma: "Nombre Apellido · @usuario";
+    /* Etiquetas: fondo y texto de cada categoría (pasteles tipo Notion) */
+    --tag1-bg: #f4e7e1; --tag1-tx: #6b3f2e;   /* marrón rosado */
+    --tag2-bg: #fbf0cc; --tag2-tx: #7a5a00;   /* amarillo */
+    --tag3-bg: #f7e3ef; --tag3-tx: #7a2e5d;   /* rosa */
+    --tag4-bg: #e3eefb; --tag4-tx: #1f4f8a;   /* azul */
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #d6d3d1; font-family: "Inter", ui-sans-serif, system-ui, sans-serif; }
+  .img {
+    width: 1080px; height: 1350px; margin: 40px auto; padding: 90px 80px 130px;
+    background: var(--papel); color: var(--tinta); position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,.25); display: flex; flex-direction: column;
+  }
+  .img::after { content: var(--firma); position: absolute; left: 80px; bottom: 56px; font-size: 26px; color: var(--suave); }
+
+  h1 { font-size: 76px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+
+  .tabs { display: flex; gap: 40px; margin-top: 36px; border-bottom: 2px solid var(--linea); }
+  .tab { display: flex; align-items: center; gap: 12px; font-size: 28px; color: var(--suave); padding-bottom: 16px; }
+  .tab.on { color: var(--tinta); font-weight: 500; border-bottom: 3px solid var(--tinta); margin-bottom: -2px; }
+  .tab svg { width: 26px; height: 26px; }
+
+  .lista { list-style: none; padding: 0; margin-top: 30px; display: grid; gap: 4px; }
+  .fila { display: grid; grid-template-columns: 56px 1fr auto; align-items: center; padding: 12px 0; }
+  .emoji { font-size: 36px; line-height: 1; }
+  .txt { font-size: 34px; font-weight: 500; text-decoration: underline; text-decoration-color: var(--subrayado); text-decoration-thickness: 2px; text-underline-offset: 8px; }
+  .tag { font-size: 24px; padding: 5px 14px; border-radius: 8px; white-space: nowrap; }
+  .t1 { background: var(--tag1-bg); color: var(--tag1-tx); }
+  .t2 { background: var(--tag2-bg); color: var(--tag2-tx); }
+  .t3 { background: var(--tag3-bg); color: var(--tag3-tx); }
+  .t4 { background: var(--tag4-bg); color: var(--tag4-tx); }
+
+  @media screen { .img { zoom: .45; } }
+  @page { size: 1080px 1350px; margin: 0; }
+  @media print { body { background: none; } .img { margin: 0; box-shadow: none; zoom: 1; } }
+</style>
+</head>
+<body>
+
+<!-- Entre 6 y 14 filas caben bien. Cada fila: emoji + texto corto + una etiqueta. -->
+<section class="img">
+  <h1>Mi equipo de LinkedIn con Claude</h1>
+
+  <div class="tabs">
+    <span class="tab on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>Todo</span>
+    <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>Puestos</span>
+    <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>Diseño</span>
+    <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>Rutina</span>
+  </div>
+
+  <ul class="lista">
+    <li class="fila"><span class="emoji">🧭</span><span class="txt">Kickoff: tu perfil y tu voz</span><span class="tag t4">Inicio</span></li>
+    <li class="fila"><span class="emoji">✍️</span><span class="txt">Redactora</span><span class="tag t1">Puesto</span></li>
+    <li class="fila"><span class="emoji">💡</span><span class="txt">Estratega</span><span class="tag t1">Puesto</span></li>
+    <li class="fila"><span class="emoji">📊</span><span class="txt">Analista</span><span class="tag t1">Puesto</span></li>
+    <li class="fila"><span class="emoji">📅</span><span class="txt">Community manager</span><span class="tag t1">Puesto</span></li>
+    <li class="fila"><span class="emoji">🖍️</span><span class="txt">Infografías y gráficos</span><span class="tag t2">Diseño</span></li>
+    <li class="fila"><span class="emoji">🗓️</span><span class="txt">Reunión de los lunes</span><span class="tag t3">Rutina</span></li>
+  </ul>
+</section>
+
+</body>
+</html>

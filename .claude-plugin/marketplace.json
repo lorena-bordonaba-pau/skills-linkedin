@@ -1,0 +1,23 @@
+{
+  "name": "equipo-linkedin",
+  "owner": {
+    "name": "Lorena Bordonaba"
+  },
+  "metadata": {
+    "description": "Skills de LinkedIn en español para Claude, con Metricool como base."
+  },
+  "plugins": [
+    {
+      "name": "equipo-linkedin",
+      "source": "./",
+      "description": "7 skills de LinkedIn en español: kickoff, redactora, estratega, analista, community manager, infografías y gráficos, y reunión semanal. Usa el MCP de Metricool para leer tus datos y programar.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Lorena Bordonaba"
+      },
+      "license": "MIT",
+      "keywords": ["linkedin", "marketing", "español", "metricool", "claude-skills"],
+      "category": "productivity"
+    }
+  ]
+}
