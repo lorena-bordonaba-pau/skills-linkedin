@@ -12,14 +12,14 @@ Nada se publica sin tu «sí».
 ### Claude Desktop o claude.ai
 
 1. **Personalizar** → pestaña **Plugins** → **Añadir** → **Añadir marketplace**.
-2. **Desde un repositorio** → pega `<usuario>/equipo-linkedin` y sincroniza.
+2. **Desde un repositorio** → pega `lorena-bordonaba-pau/skills-linkedin` y sincroniza.
 3. En **Descubrir**, busca *equipo-linkedin* y pulsa **+**.
 4. Comprueba en **Tuyos** que está activado y abre una conversación nueva.
 
 ### Claude Code
 
 ```
-/plugin marketplace add <usuario>/equipo-linkedin
+/plugin marketplace add lorena-bordonaba-pau/skills-linkedin
 /plugin install equipo-linkedin@equipo-linkedin
 ```
 
