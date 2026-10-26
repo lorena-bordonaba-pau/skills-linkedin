@@ -1,6 +1,6 @@
 ---
 name: linkedin-reunion-semanal
-description: La reunión de equipo de cada lunes. Encadena a la analista (últimos 7 días), la estratega (qué repetir, qué dejar y el plan), la redactora (el primer post de la semana) y la community manager (programarlo a la mejor hora, con un sí). Úsala cuando alguien diga «reunión de LinkedIn», «revisión semanal», «lo de los lunes», «prepara mi semana de LinkedIn».
+description: La reunión de equipo de cada lunes. Encadena a la analista (últimos 7 días), la estratega (qué repetir, qué dejar y el plan), la redactora (el primer post de la semana) y la community manager (programarlo a la mejor hora, con un sí). Úsala cuando alguien diga «reunión de LinkedIn», «revisión semanal», «lo de los lunes», «prepara mi semana de LinkedIn». No es para un solo post suelto (usa linkedin-redactora).
 ---
 
 # Reunión semanal del equipo de LinkedIn

@@ -1,6 +1,6 @@
 ---
 name: linkedin-infografia
-description: Diseña la imagen de un post de LinkedIn con la marca de la persona, en cuatro estilos (boceto a mano para explicar conceptos, listado tipo Notion, captura de pantalla en 16:9 para herramientas y novedades, y datos o gráficos) o en sus propias plantillas, que crea a partir de capturas de diseños suyos. Maqueta en HTML (1080×1350, o 1920×1080 la captura) y lo deja listo para exportar y programar en Metricool. Úsala cuando alguien diga «hazme una infografía», «hazme un gráfico», «explica esto con un dibujo», «hazme un listado», «hazme una captura de esta herramienta», «crea una plantilla con mi estilo», «te paso mis diseños».
+description: Diseña la imagen de un post de LinkedIn con la marca de la persona, en cuatro estilos (boceto a mano para explicar conceptos, listado tipo Notion, captura de pantalla en 16:9 para herramientas y novedades, y datos o gráficos) o en sus propias plantillas, que crea a partir de capturas de diseños suyos. Maqueta en HTML (1080×1350, o 1920×1080 la captura) y lo deja listo para exportar y programar en Metricool. Úsala cuando alguien diga «hazme una infografía», «hazme un gráfico», «explica esto con un dibujo», «hazme un listado», «hazme una captura de esta herramienta», «crea una plantilla con mi estilo», «te paso mis diseños». No es para escribir el texto del post (usa linkedin-redactora).
 ---
 
 # Infografías y gráficos para LinkedIn

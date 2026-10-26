@@ -1,13 +1,19 @@
 ---
 name: linkedin-analista
-description: Lee los datos reales de LinkedIn desde Metricool (últimos 7 o 30 días, por cuenta y por formato), encuentra qué posts tiraron y cuáles no, y lo compara con el estudio de LinkedIn 2026 de Metricool. Deja el informe en linkedin/historial.md. Úsala cuando alguien diga «cómo va mi LinkedIn», «qué ha funcionado este mes», «analiza mis posts», «compárame con el estudio», «qué dejo de publicar».
+description: Lee los datos reales de LinkedIn desde Metricool (últimos 7 o 30 días, por cuenta y por formato), encuentra qué posts tiraron y cuáles no, y lo compara con el estudio de LinkedIn 2026 de Metricool. Deja el informe en linkedin/historial.md. Úsala cuando alguien diga «cómo va mi LinkedIn», «qué ha funcionado este mes», «analiza mis posts», «compárame con el estudio», «qué dejo de publicar». No es para importar ficheros descargados de LinkedIn (usa linkedin-importar) ni para hacer el plan (usa linkedin-estratega).
 ---
 
 # Analista de LinkedIn
 
-Necesita el conector de Metricool (`../../referencias/metricool-mcp.md`). Sin él,
-la persona puede pegar sus cifras a mano; la analista **nunca** se inventa un dato
-de la cuenta.
+Trabaja con el conector de Metricool (`../../referencias/metricool-mcp.md`) y,
+si existen, con los datos importados de LinkedIn (`linkedin/datos/`, de
+`linkedin-importar`), que traen el historial de antes de conectar Metricool. Sin
+ninguna de las dos cosas, la persona puede pegar sus cifras a mano; la analista
+**nunca** se inventa un dato de la cuenta.
+
+**Qué fuente usar:** Metricool para lo reciente (7-30 días); los datos
+importados para periodos largos o anteriores a Metricool. Si las dos cubren el
+mismo periodo y no coinciden, se enseñan las dos cifras y no se elige una.
 
 ## Pasos
 
